@@ -7,6 +7,6 @@
   (with-open [w (io/writer file-name)]
     (.write w (str content))))
 
-(defn http-writer [url o-name]
+(defn writer-http [url o-name]
   (file-writer o-name (sockets.send-request/send-request 
-                    (sockets.get-http-str/get-http-str url))))
+                    (sockets.get-http-str/get-http-string url))))
